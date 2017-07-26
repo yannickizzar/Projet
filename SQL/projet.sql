@@ -57,10 +57,10 @@ CREATE TABLE user_type(
 	user_privilege BOOLEAN
 	)ENGINE=InnoDB;
 	
-CREATE TABLE workstation(
-	id_position INT AUTO_INCREMENT PRIMARY KEY,
-	name_position VARCHAR(255),
-	presentation_position VARCHAR(500),
+CREATE TABLE proposal(
+	id_proposal INT AUTO_INCREMENT PRIMARY KEY,
+	name_proposal VARCHAR(255),
+	presentation_proposal VARCHAR(500),
 	type_contract VARCHAR(255),
 	handicap_accessibility BOOLEAN
 	)ENGINE=InnoDB;
