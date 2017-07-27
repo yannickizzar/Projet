@@ -1,0 +1,68 @@
+/******
+
+Comparer les competences des candidats avec les competences des postes à pourvoir des entreprises
+Sortir en premier les plus compatibles !!
+
+
+******/
+ALGORITHME MATCHING
+CONSTANTE
+	
+	ENTIER : MAX <- 10
+	
+VARIABLE
+	
+	TABLEAU <CHAINE> [MAX] : poste
+	TABLEAU <CHAINE> [MAX] : candidat
+
+	ENTIER : pourcentageDeCompatibilite  <- 0
+	
+FONCTION ENTIER Init(TABLEAU<CHAINE> [MAX] : tab)
+	VARIABLE
+		
+		ENTIER : ii
+		
+	DEBUT
+	
+		POUR ii DE 0 A MAX-1 PAS DE 1 FAIRE
+			tab[ii] <- '0'
+		FINPOUR
+	
+		Retourne 0
+	FIN
+FINFONCTION
+
+FONCTION ENTIER InsertVal(TABLEAU<CHAINE> [MAX] : tab1 ; TABLEAU<CHAINE> [MAX] : tab2)
+FINFONCTION
+
+FONCTION FLOAT CompareTo(TABLEAU<CHAINE> [MAX] : tab1 ; TABLEAU<CHAINE> [MAX] : tab2)
+	VARIABLE
+		ENTIER ii;
+		ENTIER jj;
+		
+		FLOAT res <- 0;
+	DEBUT
+	
+		POUR ii DE 0 A MAX-1 PAS DE 1 FAIRE
+			POUR jj DE 0 A MAX-1 PAS DE 1 FAIRE
+				SI tab1[i] = tab2 [j] ALORS
+					res <- res + 1;
+				FINSI 
+			FINPOUR
+		FINPOUR
+		
+		res <- (res/MAX) * 100
+		
+		Retourne res 
+	FIN
+FINFONCTION
+
+DEBUT
+	
+	Init(poste)
+	Init(candidat)
+	InsertVal(poste,candidat)
+	
+	pourcentageDeCompatibilite <- CompareTo(poste,candidat)
+FIN
+
